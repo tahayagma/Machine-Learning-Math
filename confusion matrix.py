@@ -20,8 +20,8 @@ def confusion_Matrix(y_test,y_pred):
     
     recall = true_positive/(true_positive+false_negative)
     
-    f1_score = 2*((precision*recall)/(precision*2))
+    f1_score = 2*((precision*recall)/(precision+recall))
     
-    print(f"accuracy:{round(accuracy_score[0],2)}\nprecision:{round(precision[0],2)}\nrecall:{recall[0]}\nf1_score:{f1_score[0]}")
+    print(f"accuracy:{round(accuracy_score[0],2)}\nprecision:{round(precision[0],2)}\nrecall:{round(recall[0],2)}\nf1_score:{round(f1_score[0],2)}")
     
     return np.array([true_negative,false_positive,false_negative,true_positive]).reshape(2,2)
